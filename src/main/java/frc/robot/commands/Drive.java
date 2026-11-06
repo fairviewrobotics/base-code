@@ -25,8 +25,8 @@ public class Drive extends Command {
         driveV = MathUtil.applyDeadband(driveV, 0.1);
         turnV = MathUtil.applyDeadband(turnV, 0.1);
 
-        driveV = Math.max(driveV, 2);
-        turnV = Math.max(turnV, 2);
+        driveV = Math.min(driveV, 2);
+        turnV = Math.min(turnV, 2);
 
         tank.drive(driveV, turnV);
     }
